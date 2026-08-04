@@ -1,37 +1,37 @@
 {
   "logo": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885382042-logo-TEST-PLACEHOLDER.png",
-    "alt": "A minimalist typographic wordmark for Margin, featuring high-contrast serif lettering and a single vertical hairline rule. The design adheres to the Swiss editorial aesthetic by prioritizing negative ",
+    "url": "",
+    "alt": "",
     "width": 1024,
     "height": 1024
   },
   "hero": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885371714-hero-TEST-PLACEHOLDER.png",
-    "alt": "A minimalist macro study of heavy-weight paper texture, emphasizing the tactile grain and deckle edge through high-contrast raking light. This visual establishes the brand's focus on material honesty ",
+    "url": "",
+    "alt": "",
     "width": 1920,
     "height": 1080
   },
   "feature_1": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885371483-feature_1-TEST-PLACEHOLDER.png",
-    "alt": "A minimalist macro study of paper texture, focusing on the deckle edge and fiber grain of a heavy sheet to establish the brand's tactile authority.\n\nDEFENSE:\nCHOICE: An extreme macro of a deckle edge ",
+    "url": "",
+    "alt": "",
     "width": 800,
     "height": 600
   },
   "feature_2": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885372019-feature_2-TEST-PLACEHOLDER.png",
-    "alt": "A macro study of the Smyth-sewn binding and deckle edge, emphasizing the physical construction and tactile quality of the notebook. The single-source raking light creates a monumental feel for a small",
+    "url": "",
+    "alt": "",
     "width": 800,
     "height": 600
   },
   "feature_3": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885371458-feature_3-TEST-PLACEHOLDER.png",
-    "alt": "A macro study of a deckle-edged paper sheet, emphasizing the raw material quality and tactile weight of the Margin brand. The single-source lighting creates a monumental sense of calm through high-con",
+    "url": "",
+    "alt": "",
     "width": 800,
     "height": 600
   },
   "social_proof": {
-    "url": "https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885392586-social_proof-TEST-PLACEHOLDER.png",
-    "alt": "An extreme macro shot of a deckle-edged paper sheet, emphasizing the tactile grain and material weight through high-contrast raking light. This serves as a silent testimonial to the brand's commitment",
+    "url": "",
+    "alt": "",
     "width": 1200,
     "height": 800
   }
