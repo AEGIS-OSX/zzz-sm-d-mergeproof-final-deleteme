@@ -1,19 +1,47 @@
-"use client";
 import assets from "../../public/assets.json";
 
 type AssetKey = keyof typeof assets;
 
-export function ProjectImage({ id, className }: { id: AssetKey; className?: string }) {
+interface ProjectImageProps {
+  id: AssetKey;
+  className?: string;
+  alt?: string;
+  priority?: boolean;
+  fetchpriority?: "high" | "low" | "auto";
+}
+
+export function ProjectImage({
+  id,
+  className,
+  alt,
+  priority,
+  fetchpriority,
+}: ProjectImageProps) {
   const asset = assets[id];
-  if (!asset?.url) return null;
+
+  if (!asset?.url) {
+    return (
+      <div className={className}>
+        {alt ?? ""}
+      </div>
+    );
+  }
+
+  const resolvedAlt = alt ?? asset.alt;
+  const resolvedFetchPriority = priority
+    ? "high"
+    : fetchpriority ?? undefined;
+  const resolvedLoading = priority ? "eager" : "lazy";
+
   return (
     <img
       src={asset.url}
-      alt={asset.alt}
+      alt={resolvedAlt}
       width={asset.width}
       height={asset.height}
       className={className}
-      loading={id === "hero" ? "eager" : "lazy"}
+      loading={resolvedLoading}
+      fetchpriority={resolvedFetchPriority}
     />
   );
 }
