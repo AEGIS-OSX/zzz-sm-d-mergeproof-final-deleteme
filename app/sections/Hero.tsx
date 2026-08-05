@@ -10,9 +10,9 @@ const containerVariants = {
     opacity: 1,
     transition: {
       delayChildren: 0.05,
-      staggerChildren: 0.1,
-    },
-  },
+      staggerChildren: 0.1
+    }
+  }
 };
 
 const itemVariants = {
@@ -22,26 +22,27 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
-    },
-  },
+      ease: "easeOut"
+    }
+  }
 };
 
 export default function Hero(): JSX.Element {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"],
+    offset: ["start end", "end start"]
   });
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "25%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
 
   return (
     <section
       id="hero"
       ref={sectionRef}
-      className="min-h-screen bg-[var(--color-canvas)] pt-[12vh] pb-[16vh]"
+      className="min-h-screen pt-32 pb-48"
+      style={{ backgroundColor: "var(--color-canvas)" }}
     >
-      <div className="max-w-[1280px] mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-8">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8">
         <motion.div
           className="md:col-span-7 flex flex-col justify-center"
           variants={containerVariants}
@@ -50,23 +51,25 @@ export default function Hero(): JSX.Element {
           viewport={{ once: true, margin: "-100px" }}
         >
           <motion.p
-            className="font-[family-name:var(--font-mono)] text-[var(--text-xs)] text-[var(--color-pencil)] tracking-[0.02em] mb-4"
+            className="font-[family-name:var(--font-mono)] text-[var(--text-xs)] tracking-[0.02em] mb-4"
+            style={{ color: "var(--color-pencil)" }}
             variants={itemVariants}
           >
             Preview: Launching 2026
           </motion.p>
           <motion.h1
-            className="font-[family-name:var(--font-display)] text-[var(--text-display-sm)] xl:text-[var(--text-display)] leading-[0.94] tracking-[-0.01em] text-[var(--color-ink)] [overflow-wrap:anywhere] min-w-0 mb-6"
+            className="font-[family-name:var(--font-display)] text-[var(--text-display-sm)] xl:text-[var(--text-display)] leading-[0.94] tracking-[-0.01em] min-w-0 mb-6"
+            style={{ color: "var(--color-ink)" }}
             variants={itemVariants}
           >
             Margin
           </motion.h1>
           <motion.p
-            className="font-[family-name:var(--font-body)] text-[var(--text-md)] leading-[1.65] text-[var(--color-ink)] max-w-sm"
+            className="font-[family-name:var(--font-body)] text-[var(--text-md)] leading-[1.65] max-w-3xl"
+            style={{ color: "var(--color-ink)" }}
             variants={itemVariants}
           >
-            The archival alternative to the disposable digital note. A physical
-            vessel for permanent thought.
+            The archival alternative to the disposable digital note. A physical vessel for permanent thought.
           </motion.p>
         </motion.div>
         <div className="md:col-span-5 flex items-center justify-center overflow-hidden">
