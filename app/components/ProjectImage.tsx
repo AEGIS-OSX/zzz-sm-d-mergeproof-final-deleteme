@@ -41,7 +41,7 @@ export function ProjectImage({
       height={asset.height}
       className={className}
       loading={resolvedLoading}
-      fetchpriority={resolvedFetchPriority}
+      fetchPriority={resolvedFetchPriority}
     />
   );
 }
