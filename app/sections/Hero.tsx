@@ -1,75 +1,35 @@
-"use client"
-
-import { motion, useReducedMotion } from "framer-motion"
-
-export default function Hero(): JSX.Element {
-  const shouldReduceMotion = useReducedMotion()
-
-  const fadeInUp = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: {
-      duration: shouldReduceMotion ? 0 : 0.6,
-      ease: "easeOut",
-    },
-  }
-
+export default function Hero() {
   return (
-    <motion.section
+    <section
       id="hero"
-      className="relative flex w-full min-h-dvh items-center justify-center overflow-hidden before:absolute before:inset-0 before:bg-[var(--color-text)] before:opacity-70 before:content-['']"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{
-        duration: shouldReduceMotion ? 0 : 0.6,
-        ease: "easeOut",
+      aria-label="Hero"
+      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden"
+      style={{
+        backgroundImage: "url(/images/archival-book.jpg)",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url(https://zkvkbpxrxnfynqqeytke.supabase.co/storage/v1/object/public/marketing-assets/zzz-sm-d-mergeproof-final-deleteme/cleo/1785885371714-hero-TEST-PLACEHOLDER.png)",
-          backgroundAttachment: "fixed",
-        }}
-        aria-hidden="true"
-      />
+      <div className="absolute inset-0 bg-black/70" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-4 text-center sm:px-6 lg:px-8">
-        <motion.h1
-          className="mb-6 font-[family-name:var(--font-display)] text-[88px] leading-[0.94] tracking-[-0.01em] text-[var(--color-bg)] sm:text-[120px]"
-          {...fadeInUp}
-          transition={{
-            ...fadeInUp.transition,
-            delay: shouldReduceMotion ? 0 : 0.2,
-          }}
-        >
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 py-32 text-center md:px-8">
+        <h1 className="font-display text-[clamp(3rem,10vw,7.5rem)] leading-[0.95] tracking-tight text-white">
           Objects For Thought
-        </motion.h1>
-
-        <motion.p
-          className="mb-8 max-w-xl font-[family-name:var(--font-body)] text-[17px] leading-[1.65] text-[var(--color-bg)] opacity-80"
-          {...fadeInUp}
-          transition={{
-            ...fadeInUp.transition,
-            delay: shouldReduceMotion ? 0 : 0.4,
-          }}
+        </h1>
+        <p
+          className="mt-8 max-w-lg text-balance text-lg leading-relaxed text-white/80 md:text-xl"
+          style={{ fontFamily: "var(--font-body, sans-serif)" }}
         >
           A quiet physical notebook for better memory
-        </motion.p>
-
-        <motion.a
+        </p>
+        <a
           href="#registry"
-          className="font-[family-name:var(--font-body)] text-[17px] leading-[1.65] text-[var(--color-accent)] underline underline-offset-4 focus:outline-none focus:ring-2 focus:ring-[var(--color-accent)] focus:ring-offset-2 focus:ring-offset-[var(--color-bg)]"
-          {...fadeInUp}
-          transition={{
-            ...fadeInUp.transition,
-            delay: shouldReduceMotion ? 0 : 0.6,
-          }}
+          className="mt-12 inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-medium tracking-wide text-black transition-colors duration-200 hover:bg-white/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-black/50"
         >
           Join the Registry
-        </motion.a>
+        </a>
       </div>
-    </motion.section>
-  )
+    </section>
+  );
 }
