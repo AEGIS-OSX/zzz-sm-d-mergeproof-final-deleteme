@@ -42,7 +42,7 @@ export default function CraftStory() {
       viewport={{ once: true, margin: "-100px" }}
       variants={containerVariants}
     >
-      <div className="mx-auto max-width-[1280px] w-full grid grid-cols-1 lg:grid-cols-12">
+      <div className="mx-auto max-w-[1280px] w-full grid grid-cols-1 lg:grid-cols-12">
         <div className="lg:col-span-7 flex flex-col items-start">
           {/* Accent Clay Rule */}
           <motion.div
