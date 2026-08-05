@@ -23,59 +23,98 @@ export default function Hero() {
         };
 
   return (
-    <motion.section
-      id="hero"
-      aria-label="Hero"
-      className="relative flex min-h-[100dvh] w-full items-center justify-center overflow-hidden before:absolute before:inset-0 before:z-[1] before:bg-[var(--color-ink)]/70 before:content-['']"
-      style={{
-        backgroundImage: "url(/images/archival-book.jpg)",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
-      {...sectionMotion}
-    >
-      <div className="relative z-10 flex flex-col items-center justify-center px-6 py-32 text-center md:px-8">
-        <motion.span
-          className="mb-6 font-mono font-medium text-[var(--color-canvas)]"
-          style={{
-            fontSize: "14px",
-            lineHeight: "1.2",
-            letterSpacing: "0.02em",
-          }}
-          {...fadeUp(0.1)}
-        >
-          Preview: Launching 2026
-        </motion.span>
+    <>
+      <style>{`
+        .hero-scrim::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: color-mix(in srgb, var(--color-text) 70%, transparent);
+          z-index: 1;
+        }
+        .hero-cta {
+          transition: opacity 200ms ease;
+        }
+        .hero-cta:hover {
+          opacity: 0.9;
+        }
+        .hero-cta:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 2px var(--color-bg), 0 0 0 4px var(--color-accent);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .hero-scrim {
+            background-attachment: scroll !important;
+          }
+        }
+      `}</style>
+      <motion.section
+        id="hero"
+        aria-label="Hero"
+        className="hero-scrim relative flex w-full items-center justify-center overflow-hidden"
+        style={{
+          minHeight: "100dvh",
+          backgroundImage: "url(/images/archival-book.jpg)",
+          backgroundAttachment: "fixed",
+          backgroundPosition: "center",
+          backgroundSize: "cover",
+        }}
+        {...sectionMotion}
+      >
+        <div className="relative z-10 flex flex-col items-center justify-center px-6 py-32 text-center md:px-8">
+          <motion.span
+            className="mb-6 font-mono font-medium"
+            style={{
+              fontSize: "14px",
+              lineHeight: "1.2",
+              letterSpacing: "0.02em",
+              color: "var(--color-bg)",
+            }}
+            {...fadeUp(0.1)}
+          >
+            Preview: Launching 2026
+          </motion.span>
 
-        <motion.h1
-          className="font-display text-[88px] leading-[0.94] tracking-[-0.01em] text-[var(--color-canvas)] md:text-[120px]"
-          {...fadeUp(0.2)}
-        >
-          Margin
-        </motion.h1>
+          <motion.h1
+            className="font-display"
+            style={{
+              fontSize: "clamp(88px, 10vw, 120px)",
+              lineHeight: "0.94",
+              letterSpacing: "-0.01em",
+              color: "var(--color-bg)",
+            }}
+            {...fadeUp(0.2)}
+          >
+            Margin
+          </motion.h1>
 
-        <motion.p
-          className="mt-8 max-w-lg text-balance text-[var(--color-pencil)]"
-          style={{
-            fontFamily: "var(--font-body, sans-serif)",
-            fontSize: "17px",
-            lineHeight: "1.65",
-          }}
-          {...fadeUp(0.3)}
-        >
-          The archival alternative to the disposable digital note. A physical vessel for permanent thought.
-        </motion.p>
+          <motion.p
+            className="mt-8 max-w-lg text-balance"
+            style={{
+              fontFamily: "var(--font-body)",
+              fontSize: "17px",
+              lineHeight: "1.65",
+              color: "var(--color-text-muted)",
+            }}
+            {...fadeUp(0.3)}
+          >
+            The archival alternative to the disposable digital note. A physical vessel for permanent thought.
+          </motion.p>
 
-        <motion.a
-          href="#registry"
-          className="mt-12 inline-flex items-center justify-center bg-[var(--color-accent)] px-8 py-4 text-sm font-medium tracking-wide text-[var(--color-canvas)] transition-opacity duration-200 hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)] focus-visible:ring-offset-4 focus-visible:ring-offset-[var(--color-ink)]"
-          style={{ borderRadius: "0px" }}
-          {...fadeUp(0.4)}
-        >
-          Join the Registry
-        </motion.a>
-      </div>
-    </motion.section>
+          <motion.a
+            href="#registry"
+            className="hero-cta mt-12 inline-flex items-center justify-center px-8 py-4 text-sm font-medium tracking-wide"
+            style={{
+              backgroundColor: "var(--color-accent)",
+              color: "var(--color-bg)",
+              borderRadius: "0px",
+            }}
+            {...fadeUp(0.4)}
+          >
+            Join the Registry
+          </motion.a>
+        </div>
+      </motion.section>
+    </>
   );
 }
