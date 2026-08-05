@@ -1,11 +1,11 @@
 "use client";
 
-import Navigation from "@/app/components/Navigation";
-import Hero from "@/app/components/Hero";
-import CraftStory from "@/app/components/CraftStory";
-import ProductTiers from "@/app/components/ProductTiers";
-import Preview from "@/app/components/Preview";
-import Footer from "@/app/components/Footer";
+import Navigation from "@/app/sections/Navigation";
+import Hero from "@/app/sections/Hero";
+import CraftStory from "@/app/sections/CraftStory";
+import ProductTiers from "@/app/sections/ProductTiers";
+import Preview from "@/app/sections/Preview";
+import Footer from "@/app/sections/Footer";
 
 export default function Home() {
   return (

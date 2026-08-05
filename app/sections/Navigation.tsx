@@ -1,4 +1,4 @@
-import ProjectImage from "../components/ProjectImage";
+import { ProjectImage } from "../components/ProjectImage";
 
 export default function Navigation() {
   return (
