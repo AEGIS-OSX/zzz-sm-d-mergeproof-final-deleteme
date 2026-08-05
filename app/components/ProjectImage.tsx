@@ -1,16 +1,14 @@
 import Image from "next/image";
 import assets from "../../public/assets.json";
 
-type AssetKey = keyof typeof assets;
-
 interface ProjectImageProps {
-  id: AssetKey;
+  id: string;
   alt: string;
   className?: string;
 }
 
 function ProjectImage({ id, alt, className }: ProjectImageProps) {
-  const asset = assets[id];
+  const asset = assets[id as keyof typeof assets];
 
   if (!asset?.url) {
     return (
